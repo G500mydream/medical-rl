@@ -1,0 +1,26 @@
+name: t1_reasoning
+base_model: Qwen/Qwen3-4B-Instruct-2507
+method: lora
+lora_rank: 32
+lora_alpha: 64
+
+data:
+  - data/processed/medreason.jsonl
+  - data/processed/medqa.jsonl
+  - data/processed/medxpertqa.jsonl
+  - data/processed/medcalc.jsonl
+
+reward:
+  type: verifiable
+  correct: 1.0
+  format: 0.05
+  length_penalty: 0.0005
+  soft_max_tokens: 800
+
+train:
+  rollout_n: 8
+  max_response_length: 1536
+  steps: 400
+  lr: 1.0e-6
+
+domain_tags: [reasoning, knowledge]

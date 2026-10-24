@@ -1,0 +1,25 @@
+name: t3_safety
+base_model: Qwen/Qwen3-4B-Instruct-2507
+method: lora
+lora_rank: 32
+lora_alpha: 64
+
+data:
+  - data/processed/medsafetybench.jsonl
+  - data/processed/refusal.jsonl
+  - data/processed/red_flag_referral.jsonl
+
+reward:
+  type: rubric
+  rubric_dropout: 0.2
+  negative_credit: true
+  format: 0.05
+  soft_max_tokens: 600
+
+train:
+  rollout_n: 8
+  max_response_length: 768
+  steps: 300
+  lr: 5.0e-7
+
+domain_tags: [safety]

@@ -1,0 +1,25 @@
+name: t2_communication
+base_model: Qwen/Qwen3-4B-Instruct-2507
+method: lora
+lora_rank: 32
+lora_alpha: 64
+
+data:
+  - data/processed/healthbench_train.jsonl
+  - data/processed/patient_education.jsonl
+
+reward:
+  type: rubric
+  rubric_dropout: 0.3
+  negative_credit: true
+  format: 0.05
+  length_penalty: 0.0005
+  soft_max_tokens: 800
+
+train:
+  rollout_n: 8
+  max_response_length: 1024
+  steps: 400
+  lr: 1.0e-6
+
+domain_tags: [communication]

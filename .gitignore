@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+configs/paths.env
+
+# Training artifacts
+outputs/
+checkpoints/
+wandb/
+.cache/
+third_party/
+
+# Data (keep schema docs, ignore generated data)
+data/processed/
+data/raw/
+*.parquet
+!data/samples/*.parquet
+
+# Logs / OS
+*.log
+.DS_Store
+Thumbs.db

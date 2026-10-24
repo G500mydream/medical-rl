@@ -1,0 +1,8 @@
+model_name_or_path: Qwen/Qwen3-4B-Instruct-2507
+adapter_name_or_path: outputs/qwen3-4b-lora-sft
+template: qwen3
+finetuning_type: lora
+export_dir: outputs/qwen3-4b-sft-merged
+export_size: 2
+export_device: cpu
+export_legacy_format: false

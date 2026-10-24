@@ -1,0 +1,20 @@
+# Install torch first from the CUDA wheel index (see scripts/setup_env.sh).
+torch==2.6.0
+transformers>=4.51.0
+peft>=0.15.0
+accelerate>=1.6.0
+datasets>=3.5.0
+vllm==0.8.5
+flash-attn==2.7.4.post1
+openai>=1.70.0
+pandas>=2.2
+pyarrow>=18.0
+numpy>=1.26
+scipy>=1.13
+tqdm
+PyYAML
+wandb
+lm-eval>=0.4.7
+
+# Installed from source separately:
+#   verl, LLaMA-Factory, MedEvalKit
